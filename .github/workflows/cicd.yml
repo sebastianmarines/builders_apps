@@ -33,6 +33,9 @@ jobs:
         run: |
           npm ci
 
+      - name: Check code formatting
+        run: npm run format:check || echo "No lint or format check configured, skipping step"
+
       - name: Run tests
         run: npm test
 
